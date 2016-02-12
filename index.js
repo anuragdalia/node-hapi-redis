@@ -1,7 +1,11 @@
 "use strict";
 
+var Promise = require('bluebird');
 var redis = require('redis');
 var redisClientFactory = require('basic-redis-factory');
+
+// add promises to all redis actions
+Promise.promisifyAll(redis);
 
 exports.register = function (server, options, next) {
 
