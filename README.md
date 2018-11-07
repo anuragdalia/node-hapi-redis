@@ -1,7 +1,3 @@
-[![Build Status](https://secure.travis-ci.org/sandfox/node-hapi-redis.png)](http://travis-ci.org/sandfox/node-hapi-redis)
-[![Dependencies Status](https://david-dm.org/sandfox/node-hapi-redis.png)](https://david-dm.org/sandfox/node-hapi-redis)
-[![DevDependencies Status](https://david-dm.org/sandfox/node-hapi-redis/dev-status.png)](https://david-dm.org/sandfox/node-hapi-redis#info=devDependencies)
-
 # Hapi-Redis
 
 This is a plugin to share a common redis connection across the whole Hapi server.
