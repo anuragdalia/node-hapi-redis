@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/sandfox/node-hapi-redis.git"
+    "url": "git://github.com/anuragdalia/node-hapi-redis.git"
   },
   "keywords": [
     "hapi",
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "basic-redis-factory": "0.0.3",
-    "bluebird": "^3.3.0",
-    "redis": "^2.3.0"
+    "bluebird": "^3.5.3",
+    "redis": "^2.8.0"
   }
 }
