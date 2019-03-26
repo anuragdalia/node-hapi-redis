@@ -14,6 +14,8 @@ exports.register = function (server, options, next) {
   var redisOpts = options.connection;
 
   var redisLibrary = options.redisLibrary || redis;
+  
+  var name = options.name || "redis";
 
   var redisClient = redisClientFactory(redisLibrary, redisOpts);
 
@@ -42,10 +44,13 @@ exports.register = function (server, options, next) {
     redisClient.on('error', defaultErrorHandler);
     next();
   });
-
-  server.expose('client', redisClient);
-  server.expose('library', redisLibrary);
-
+  
+  const pluginRegistrations = (server.plugins['hapi-redis'] || {}).plug || {};
+  clients[name] = clients[name] || {};
+  clients[name].client = redisClient;
+  clients[name].library = redisLibrary;
+  
+  server.expose('plug', pluginRegistrations);
 };
 
 exports.register.attributes = {
