@@ -46,9 +46,7 @@ exports.register = function (server, options, next) {
   });
   
   const pluginRegistrations = (server.plugins['hapi-redis'] || {}).plug || {};
-  clients[name] = clients[name] || {};
-  clients[name].client = redisClient;
-  clients[name].library = redisLibrary;
+  pluginRegistrations[name] = pluginRegistrations[name] || {client: redisClient, library: redisLibrary};
   
   server.expose('plug', pluginRegistrations);
 };
